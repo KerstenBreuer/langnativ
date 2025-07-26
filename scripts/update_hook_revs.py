@@ -15,6 +15,7 @@
 # limitations under the License.
 #
 """Script to ensure the pre-commit hook revs match what is installed."""
+
 import re
 import sys
 from functools import partial
@@ -26,7 +27,7 @@ from script_utils import cli, lock_deps
 
 REPO_ROOT_DIR = Path(__file__).parent.parent.resolve()
 PRE_COMMIT_CFG_PATH = REPO_ROOT_DIR / ".pre-commit-config.yaml"
-LOCK_FILE_PATH = REPO_ROOT_DIR / "lock" / "requirements-dev.txt"
+LOCK_FILE_PATH = REPO_ROOT_DIR / "requirements.lock.txt"
 
 
 def make_dependency_dict(requirements: list[Requirement]) -> dict[str, str]:
